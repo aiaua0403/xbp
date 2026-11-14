@@ -29,8 +29,28 @@ html, body {
     margin-bottom: 40px;
 	background: #efefef;
 }
-h1{
-    text-indent: 0em;
+h1 {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+h1::before, h1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+h1::before {
+  left:0;
+}
+h1::after {
+  right: 0;
 }
 h2{
     margin-left: 1em;
