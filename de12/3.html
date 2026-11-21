@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>Yu_Pythonゲーム作成</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<body>
+<ol class="breadcrumb-001">
+    <li><a href="../index.html">ホーム</a></li>
+    <li><a href="index.html">デザイン演習Ⅰ・Ⅱ</a></li>
+    <li><a href="3.html">Pythonゲーム作成</a></li>
+</ol>
+    <div>
+        <h1>Pythonゲーム作成</h1>
+        <h2>ランダムに選ばれたキーボードのキーを素早く押すゲーム</h2>
+        Enterキーを押して3秒後にランダムにキーが指定されるので、それを押すと小数第三位までのタイムが出る。
+        <h2>プレイ映像</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yOeIwZOxPK4?si=a-o8mpUDktDnzFlx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h2>ソースコード</h2>
+        <pre style="background:#FAFAF9;color:#3f3f46;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace;font-size:13px;line-height:1.7;padding:16px 18px;margin:0;border-radius:4px;overflow-x:auto;white-space:pre;tab-size:4;-moz-tab-size:4;"><code style="font-family:inherit;background:none;padding:0;"><span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">1</span><span style="color:#0f766e;">import</span> random
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">2</span><span style="color:#0f766e;">import</span> string
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">3</span><span style="color:#0f766e;">import</span> time
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">4</span><span style="color:#0f766e;">import</span> keyboard
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">5</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">6</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"キーボードで早押しゲーム"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">7</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"Enterキーを押すと3秒後にゲームが始まります。"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">8</span>keyboard<span style="color:#a1a1aa;">.</span>wait<span style="color:#a1a1aa;">(</span><span style="color:#7B2CBF;">"enter"</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">9</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">10</span><span style="color:#8a8a94;font-style:italic;">#3カウント</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">11</span><span style="color:#0f766e;">for</span> i <span style="color:#0f766e;">in</span> <span style="color:#0f766e;">range</span><span style="color:#a1a1aa;">(</span><span style="color:#a16207;">3</span><span style="color:#a1a1aa;">,</span> <span style="color:#a16207;">0</span><span style="color:#a1a1aa;">,</span> <span style="color:#71717a;">-</span><span style="color:#a16207;">1</span><span style="color:#a1a1aa;">)</span><span style="color:#a1a1aa;">:</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">12</span>    <span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span><span style="color:#7B2CBF;">f"</span><span><span style="color:#a1a1aa;">{</span>i<span style="color:#a1a1aa;">}</span></span><span style="color:#7B2CBF;">..."</span></span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">13</span>    time<span style="color:#a1a1aa;">.</span>sleep<span style="color:#a1a1aa;">(</span><span style="color:#a16207;">1</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">14</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">15</span><span style="color:#8a8a94;font-style:italic;">#キーの選出</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">16</span>key <span style="color:#71717a;">=</span> random<span style="color:#a1a1aa;">.</span>choice<span style="color:#a1a1aa;">(</span>string<span style="color:#a1a1aa;">.</span>ascii_lowercase<span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">17</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span><span style="color:#7B2CBF;">f"【 </span><span><span style="color:#a1a1aa;">{</span>key<span style="color:#a1a1aa;">}</span></span><span style="color:#7B2CBF;"> 】"</span></span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">18</span><span style="color:#8a8a94;font-style:italic;">#計測開始</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">19</span>start <span style="color:#71717a;">=</span> time<span style="color:#a1a1aa;">.</span>time<span style="color:#a1a1aa;">(</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">20</span>keyboard<span style="color:#a1a1aa;">.</span>wait<span style="color:#a1a1aa;">(</span>key<span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">21</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">22</span><span style="color:#8a8a94;font-style:italic;">#結果</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">23</span><span style="color:#0f766e;">type</span> <span style="color:#71717a;">=</span> time<span style="color:#a1a1aa;">.</span>time<span style="color:#a1a1aa;">(</span><span style="color:#a1a1aa;">)</span>
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">24</span>record <span style="color:#71717a;">=</span> <span style="color:#0f766e;">type</span> <span style="color:#71717a;">-</span> start
+<span style="display:inline-block;width:3em;margin-right:1em;padding-right:0.8em;text-align:right;color:#c4c4cb;border-right:1px solid #e4e4e7;user-select:none;-webkit-user-select:none;">25</span><span style="color:#0f766e;">print</span><span style="color:#a1a1aa;">(</span><span><span style="color:#7B2CBF;">f"記録: </span><span><span style="color:#a1a1aa;">{</span>record<span style="color:#a1a1aa;">:</span><span>.3f</span><span style="color:#a1a1aa;">}</span></span><span style="color:#7B2CBF;"> 秒"</span></span><span style="color:#a1a1aa;">)</span></code></pre>
+
+    </div>
+</body>
+</html>
